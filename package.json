@@ -4,5 +4,5 @@
 	"version": "0.1.0",
 	"license": "CC",
 	"main": "package.js",
-	"akiVersion": "2.1.0"
+	"akiVersion": "2.1.2"
 }
