@@ -7,7 +7,7 @@
 
 class Mod {
 	constructor() {
-		this.mod = "Mez-CLS";
+		this.mod = "thelmexx-CombatMedic";
 		this.funcptr = HttpServer.onRespond["IMAGE"];
 		
 		Logger.info(`Loading: ${this.mod}`);
@@ -28,7 +28,7 @@ class Mod {
 				Nickname: "Combat Medic",
 				Location: "Streets of Tarkov",
 				Description:
-					"Former BEAR PMC Paramedic, also known as Combat Life Saver, abbreviated to CLS. Went AWOL after her squad was ambushed by Cultists during a night raid. Now works odd ends for Therapist, supplying medical equipment, but holds her own in CQC.",
+					"Former BEAR PMC medic, also known as Combat Life Saver, abbreviated to CLS. Went AWOL after her squad was ambushed by Cultists during a night raid. Now works odd ends for Therapist, supplying medical equipment, but holds her own in CQC.",
 			};
 		}
 
@@ -44,7 +44,7 @@ class Mod {
 	getImage(sessionID, req, resp, body) {
 		const filepath = `${ModLoader.getModPath(this.mod)}avatar/`;
 
-		if (req.url.includes("/avatar/Mez-CLS")) {
+		if (req.url.includes("/avatar")) {
 			HttpServer.sendFile(resp, `${filepath}test.jpg`);
 			return;
 		}
