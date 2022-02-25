@@ -4,6 +4,7 @@
 // github complained that i had too many newlines
 "use strict";
 class Mod {
+
 	constructor() {
 		this.mod = "thelmexx-CombatMedic";
 		this.funcptr = HttpServer.onRespond["IMAGE"];
@@ -35,8 +36,8 @@ class Mod {
 	
 	getImage(sessionID, req, resp, body) {
 		const filepath = `${ModLoader.getModPath(this.mod)}avatar/`;
-		if (req.url.includes("/avatar")) {
-			HttpServer.sendFile(resp, `${filepath}test.jpg`);
+		if (req.url.includes("/avatar/thelmexx")) {
+			HttpServer.sendFile(resp, `${filepath}combatmedic.jpg`);
 			return;
 		}
 		this.funcptr(sessionID, req, resp, body);
@@ -82,7 +83,6 @@ class Mod {
 		Object.values(presets).forEach((preset) => {
 			addPreset(preset);
 		});
-		
 				function addPreset(preset) {
 			preset.items.forEach((element) => {
 				const item = element;
@@ -122,7 +122,6 @@ class Mod {
 	return assort;
 	}	
 }
-
 
 module.exports.Mod = Mod;
 
